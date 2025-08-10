@@ -37,6 +37,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Links
 
+- [How to install Tailwind CSS v3 in your Next.js application](https://nextjs.org/docs/app/guides/tailwind-v3-css)
 - [Tailwind CSS docs](https://tailwindcss.com/docs/installation/using-vite)
 - [Tailwond for NextJS docs](https://nextjs.org/docs/app/getting-started/css#tailwind-css)
 - [clsx](https://www.npmjs.com/package/clsx)
+- [Formik docs](https://formik.org/)
+- [Макет Figma](https://www.figma.com/file/dPmdjAc0qKNMCKwWiC33QZ/CRM?type=design&node-id=78-6586&mode=design)
+- [офіційна документація фреймворку Next.js для інсталяції проєкту](https://nextjs.org/docs/getting-started/installation)
+- [Корисне розширення для вскоду при роботі з Tailwind](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
