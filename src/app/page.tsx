@@ -1,12 +1,13 @@
-import ActiveLabel from './components/active-label';
-import NotActiveLabel from './components/not-active-label';
+import StatusLabel, { Status } from './components/stauts-label';
 
 export default function Home() {
   return (
     <main>
-      <h1 className="text-6xl">Home page</h1>
-      <ActiveLabel>Active</ActiveLabel>
-      <NotActiveLabel>Not active</NotActiveLabel>
+      <h1 className="text-xl">Home page</h1>
+      <StatusLabel status={Status.Active}>Active</StatusLabel>
+      <StatusLabel status={Status.NotActive}>Not active</StatusLabel>
+      <StatusLabel status={Status.Pending}>Pending</StatusLabel>
+      <StatusLabel status={Status.Suspended}>Suspnded</StatusLabel>
     </main>
   );
 }

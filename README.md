@@ -39,3 +39,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 - [Tailwind CSS docs](https://tailwindcss.com/docs/installation/using-vite)
 - [Tailwond for NextJS docs](https://nextjs.org/docs/app/getting-started/css#tailwind-css)
+- [clsx](https://www.npmjs.com/package/clsx)
