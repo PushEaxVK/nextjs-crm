@@ -1,10 +1,13 @@
 'use client';
 
 import clsx from 'clsx';
-import React from 'react';
+import React, { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
 export interface ButtonProps
-  extends Partial<React.ButtonHTMLAttributes<HTMLButtonElement>> {
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
   disabled?: boolean;
 }
 
