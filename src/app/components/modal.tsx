@@ -12,14 +12,10 @@ import React, { Fragment, ReactNode } from 'react';
 export interface ModalProps {
   children?: ReactNode;
   show: boolean;
-  onClose?: () => void;
+  onClose: () => void;
 }
 
-export default function Modal({
-  show,
-  children,
-  onClose = () => {},
-}: ModalProps) {
+export default function Modal({ show, children, onClose }: ModalProps) {
   return (
     <Transition as={Fragment} show={show}>
       <Dialog

@@ -5,14 +5,9 @@ import Image from 'next/image';
 import React, { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 
 export interface LogoUploaderProps
-  extends Partial<
-    Omit<
-      DetailedHTMLProps<
-        InputHTMLAttributes<HTMLInputElement>,
-        HTMLInputElement
-      >,
-      'type'
-    >
+  extends Omit<
+    DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+    'type'
   > {
   label?: string;
 }

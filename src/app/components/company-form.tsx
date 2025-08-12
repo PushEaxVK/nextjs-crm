@@ -25,10 +25,10 @@ const initialValues: CompanyFieldValues = {
 };
 
 export interface CompanyFormProps {
-  onSubmit?: (valuse: CompanyFieldValues) => void | Promise<void>;
+  onSubmit: (valuse: CompanyFieldValues) => void | Promise<void>;
 }
 
-export default function CompanyForm({ onSubmit = () => {} }: CompanyFormProps) {
+export default function CompanyForm({ onSubmit }: CompanyFormProps) {
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       <Form className="flex flex-col gap-10">
@@ -46,7 +46,7 @@ export default function CompanyForm({ onSubmit = () => {} }: CompanyFormProps) {
               placeholder="Category"
               name="category"
             />
-            <InputField label="Joined date" placeholder="date" name="date" />
+            <InputField label="Joined date" type="date" name="date" />
             <InputField
               label="Description"
               placeholder="Description"
