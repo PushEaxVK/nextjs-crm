@@ -1,6 +1,7 @@
 import { headers } from 'next/headers';
 import StatusLabel, { Status } from '@/app/components/stauts-label';
-import CompanyForm from './components/company-form';
+import CompanyForm from '@/app/components/company-form';
+import Modal from './components/modal';
 
 export default async function Home() {
   const allHeaders = await headers();
@@ -12,7 +13,9 @@ export default async function Home() {
       <StatusLabel status={Status.NotActive}>Not active</StatusLabel>
       <StatusLabel status={Status.Pending}>Pending</StatusLabel>
       <StatusLabel status={Status.Suspended}>Suspnded</StatusLabel>
-      <CompanyForm />
+      <Modal show={true}>
+        <CompanyForm />
+      </Modal>
     </main>
   );
 }
