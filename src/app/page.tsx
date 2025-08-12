@@ -1,7 +1,6 @@
 import { headers } from 'next/headers';
 import StatusLabel, { Status } from '@/app/components/stauts-label';
-import Button from './components/button';
-import LogoUploader from './components/logo-uploader';
+import CompanyForm from './components/company-form';
 
 export default async function Home() {
   const allHeaders = await headers();
@@ -9,12 +8,11 @@ export default async function Home() {
   return (
     <main>
       <h1 className="text-xl">Home page {new Date().toTimeString()}</h1>
-      <Button />
       <StatusLabel status={Status.Active}>Active</StatusLabel>
       <StatusLabel status={Status.NotActive}>Not active</StatusLabel>
       <StatusLabel status={Status.Pending}>Pending</StatusLabel>
       <StatusLabel status={Status.Suspended}>Suspnded</StatusLabel>
-      <LogoUploader placeholder="Upload photo" />
+      <CompanyForm />
     </main>
   );
 }
