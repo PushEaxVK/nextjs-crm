@@ -7,12 +7,13 @@ import CompanyTable from '@/app/components/company-table';
 import CompanyRow from '@/app/components/company-row';
 import { Status } from '@/app/components/stauts-label';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface PageProps {}
 
 export default function Page({}: PageProps) {
   return (
     <>
-      <Header>Compaies</Header>
+      <Header>Companies</Header>
       <Toolbar action={<AddCompanyButton />}>
         <SearchInput />
       </Toolbar>
