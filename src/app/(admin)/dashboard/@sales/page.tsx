@@ -1,4 +1,5 @@
 import DashboardCard from '@/app/components/dashboard-card';
+import MagicButton from '@/app/components/magic-button';
 import SummaryTable from '@/app/components/summary-table';
 import SummaryTableCell from '@/app/components/summary-table-cell';
 import SummaryTableHeader from '@/app/components/summary-table-header';
@@ -8,11 +9,29 @@ import React from 'react';
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface PageProps {}
 
+type SummarySales = {
+  companyId: number;
+  companyTitle: string;
+  sold: number;
+  income: number;
+};
+
 export default async function Page({}: PageProps) {
-  const data = await getSummarySales();
+  const data: SummarySales[] = await new Promise<SummarySales[]>((res) => {
+    setTimeout(() => {
+      res(getSummarySales());
+    }, 4000);
+  });
 
   return (
-    <DashboardCard label="Sales details">
+    <DashboardCard
+      label={
+        <>
+          Sales details
+          <MagicButton />
+        </>
+      }
+    >
       <SummaryTable
         headers={
           <>
