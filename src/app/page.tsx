@@ -1,6 +1,7 @@
 import { headers } from 'next/headers';
 import StatusLabel, { Status } from '@/app/components/stauts-label';
 import AddCompanyButton from '@/app/components/add-company-button';
+import MagicButton from '@/app/components/magic-button';
 
 export default async function Home() {
   const allHeaders = await headers();
@@ -13,6 +14,8 @@ export default async function Home() {
       <StatusLabel status={Status.Pending}>Pending</StatusLabel>
       <StatusLabel status={Status.Suspended}>Suspnded</StatusLabel>
       <AddCompanyButton />
+      <hr />
+      <MagicButton />
     </main>
   );
 }
