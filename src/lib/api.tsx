@@ -1,6 +1,6 @@
 export const getSummaryStats = () => {
   return Promise.resolve({
-    promitions: 427,
+    promotions: 427,
     categories: 8,
     newCompanies: 28,
     activeCompanies: 670,
