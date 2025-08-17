@@ -1,11 +1,27 @@
-import ClientPage from './client-page';
+'use client';
+import Header from '@/app/components/header';
+import { notFound, useParams } from 'next/navigation';
+import React, { useEffect } from 'react';
 
-export interface PageProps {
-  params: Promise<{ id: string }>; // Assuming the ID is passed as a route paramet
+export interface CompanyPageParams {
+  id: string;
+  [key: string]: string | string[];
 }
 
-export default async function Page({ params }: PageProps) {
-  const { id } = await params;
+export default function Page() {
+  const { id } = useParams<CompanyPageParams>();
 
-  return <ClientPage id={id} />;
+  useEffect(() => {
+    const parsedId = Number.parseInt(id);
+    if (Number.isNaN(parsedId)) {
+      notFound();
+    }
+  }, [id]);
+
+  return (
+    <>
+      <Header>Company ({String(id)})</Header>
+      <p>{new Date().toTimeString()}</p>
+    </>
+  );
 }
