@@ -1,5 +1,4 @@
-import React from 'react';
-import Header from '@/app/components/header';
+import ClientPage from './client-page';
 
 export interface PageProps {
   params: Promise<{ id: string }>; // Assuming the ID is passed as a route paramet
@@ -7,10 +6,6 @@ export interface PageProps {
 
 export default async function Page({ params }: PageProps) {
   const { id } = await params;
-  return (
-    <>
-      <Header>Company ({String(id)})</Header>
-      <p>{new Date().toTimeString()}</p>
-    </>
-  );
+
+  return <ClientPage id={id} />;
 }
