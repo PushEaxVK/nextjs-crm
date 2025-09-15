@@ -7,5 +7,5 @@ export interface ErrorComponentProps {
 }
 
 export default function ErrorComponent({}: ErrorComponentProps) {
-  return <div> Unexpected error inside slot sales</div>;
+  return <div>Unexpected error inside slot sales</div>;
 }
