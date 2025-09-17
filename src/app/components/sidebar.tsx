@@ -10,7 +10,6 @@ export interface SidebarProps {}
 
 export default function Sidebar({}: SidebarProps) {
   const router = useRouter();
-
   const pathname = usePathname();
 
   const handleExitClick = () => {
