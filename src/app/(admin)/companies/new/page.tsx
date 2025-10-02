@@ -1,12 +1,10 @@
 'use client';
 
-import CompanyForm from '@/app/components/company-form';
 import React from 'react';
+import CompanyForm from '@/app/components/company-form';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface PageProps {
-  //;
-}
+export interface PageProps {}
 
 export default function Page({}: PageProps) {
   return (

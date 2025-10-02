@@ -11,7 +11,7 @@ export default function Page({}: PageProps) {
     <CompanyTable>
       <CompanyRow
         id={1}
-        category="Product"
+        category="Products"
         company="Costco"
         status={Status.Pending}
         promotion={true}

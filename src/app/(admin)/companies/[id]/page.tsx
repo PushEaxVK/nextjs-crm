@@ -1,6 +1,6 @@
+import React from 'react';
 import Header from '@/app/components/header';
 import { notFound } from 'next/navigation';
-import React from 'react';
 
 export interface PageProps {
   params: Promise<{ id: string }>;

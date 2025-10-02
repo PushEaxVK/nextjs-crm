@@ -1,14 +1,12 @@
 'use client';
 
+import React from 'react';
+import { useRouter } from 'next/navigation';
 import CompanyForm from '@/app/components/company-form';
 import Modal from '@/app/components/modal';
-import { useRouter } from 'next/navigation';
-import React from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface PageProps {
-  //;
-}
+export interface PageProps {}
 
 export default function Page({}: PageProps) {
   const router = useRouter();

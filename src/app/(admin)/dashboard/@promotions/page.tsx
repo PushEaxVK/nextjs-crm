@@ -1,15 +1,15 @@
-import DashboardCard from '@/app/components/dashboard-card';
+import React from 'react';
+import { getPromotions } from '@/lib/api';
 import SummaryTable from '@/app/components/summary-table';
 import SummaryTableCell from '@/app/components/summary-table-cell';
 import SummaryTableHeader from '@/app/components/summary-table-header';
-import { getSummaryPromotions } from '@/lib/api';
-import React from 'react';
+import DashboardCard from '@/app/components/dashboard-card';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface PageProps {}
 
 export default async function Page({}: PageProps) {
-  const data = await getSummaryPromotions();
+  const data = await getPromotions();
 
   return (
     <DashboardCard label="Promotion">
@@ -22,10 +22,10 @@ export default async function Page({}: PageProps) {
           </>
         }
       >
-        {data.map(({ promotionId, promotionName, companyTitle, discount }) => (
-          <tr key={promotionId}>
+        {data.map(({ id, title, companyTitle, discount }) => (
+          <tr key={id}>
             <SummaryTableCell>{companyTitle}</SummaryTableCell>
-            <SummaryTableCell>{promotionName}</SummaryTableCell>
+            <SummaryTableCell>{title}</SummaryTableCell>
             <SummaryTableCell align="center">{`-${discount}%`}</SummaryTableCell>
           </tr>
         ))}
