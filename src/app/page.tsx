@@ -1,6 +1,6 @@
 // import { headers } from 'next/headers';
 // import StatusLabel, { Status } from '@/app/components/stauts-label';
-import AddCompanyButton from '@/app/components/add-company-button';
+// import AddCompanyButton from '@/app/components/add-company-button';
 // import MagicButton from '@/app/components/magic-button';
 
 export default async function Home() {
@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <main>
       <h1 className="text-xl">Home page</h1>
-      <AddCompanyButton />
+      {/* <AddCompanyButton /> */}
       {/* <h1 className="text-xl">Home page {new Date().toTimeString()}</h1>
       <StatusLabel status={Status.Active}>Active</StatusLabel>
       <StatusLabel status={Status.NotActive}>Not active</StatusLabel>
