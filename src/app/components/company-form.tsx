@@ -68,7 +68,6 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
           categories?.find(({ id }) => id === values.categoryId)?.title ?? '',
         countryTitle:
           countries?.find(({ id }) => id === values.countryId)?.title ?? '',
-        hasPromotions: false,
       },
     });
 
