@@ -1,8 +1,8 @@
 'use client';
 
-import clsx from 'clsx';
-import Image from 'next/image';
 import React, { DetailedHTMLProps, InputHTMLAttributes } from 'react';
+import Image from 'next/image';
+import clsx from 'clsx';
 
 export interface LogoUploaderProps
   extends Omit<
@@ -10,23 +10,32 @@ export interface LogoUploaderProps
     'type'
   > {
   label?: string;
+  square?: boolean;
 }
 
 export default function LogoUploader({
+  square,
   label,
   placeholder,
   id,
   ...rest
 }: LogoUploaderProps) {
   return (
-    <div className="flex gap-10 mb-3">
+    <div
+      className={clsx(
+        'flex mb-3',
+        !square && 'gap-10',
+        square && 'gap-2 flex-col',
+      )}
+    >
       {label && <p className="text-base text-gray-900">{label}</p>}
       <label
         htmlFor={id}
         className={clsx(
-          'flex flex-col items-center justify-center w-40 h-40',
+          'flex flex-col items-center justify-center h-40 cursor-pointer',
           'bg-white border border-slate-900 border-dashed',
-          'rounded-full cursor-pointer',
+          !square && 'w-40 rounded-full',
+          square && 'w-full',
         )}
       >
         <Image

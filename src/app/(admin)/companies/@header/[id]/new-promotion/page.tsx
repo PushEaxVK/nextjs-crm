@@ -1,15 +1,9 @@
-'use client';
-
 import React from 'react';
-import CompanyForm from '@/app/components/company-form';
+import Header from '@/app/components/header';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface PageProps {}
 
 export default function Page({}: PageProps) {
-  return (
-    <div className="py-6 px-10">
-      <CompanyForm />
-    </div>
-  );
+  return <Header>Add promotion company</Header>;
 }

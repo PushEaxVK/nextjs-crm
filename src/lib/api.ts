@@ -104,3 +104,38 @@ export const getPromotions = async (
     init,
   );
 };
+
+export const createCompany = async ({
+  data,
+  init,
+}: {
+  data: Omit<Company, 'id' | 'hasPromotions'>;
+  init?: RequestInit;
+}) => {
+  return sendRequest<Company>(buildUlr('companies'), {
+    ...init,
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      ...(init && init.headers),
+      'content-type': 'application/json',
+    },
+  });
+};
+
+export const createPromotion = async ({
+  data,
+  init,
+}: {
+  data: Omit<Promotion, 'id'>;
+  init?: RequestInit;
+}) => {
+  return sendRequest<Promotion>(buildUlr('promotions'), {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      ...(init && init.headers),
+      'content-type': 'application/json',
+    },
+  });
+};

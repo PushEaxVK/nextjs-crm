@@ -9,6 +9,7 @@ export interface InputFieldProps
     HTMLInputElement
   > {
   label?: string;
+  as?: string;
 }
 
 export default function InputField({ label, id, ...rest }: InputFieldProps) {
