@@ -11,6 +11,14 @@ export interface PageProps {}
 export default async function Page({}: PageProps) {
   const data = await getPromotions();
 
+  const filteredData = data.filter(
+    ({ companyTitle, title }) =>
+      !(
+        companyTitle.includes('Invalid faker method') ||
+        title.includes('Invalid faker method')
+      ),
+  );
+
   return (
     <DashboardCard label="Promotion">
       <SummaryTable
@@ -22,7 +30,7 @@ export default async function Page({}: PageProps) {
           </>
         }
       >
-        {data.map(({ id, title, companyTitle, discount }) => (
+        {filteredData.map(({ id, title, companyTitle, discount }) => (
           <tr key={id}>
             <SummaryTableCell>{companyTitle}</SummaryTableCell>
             <SummaryTableCell>{title}</SummaryTableCell>
